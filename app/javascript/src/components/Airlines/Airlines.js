@@ -5,7 +5,6 @@ import Header from './Header'
 // import airlinesQuery from '../../queries/airlinesQuery'
 import styled from 'styled-components'
 import { Button } from '@material-ui/core';
-import ViewDeceased from '../Auth/ViewDeceased'
 
 const Home = styled.div`
   text-align:center;

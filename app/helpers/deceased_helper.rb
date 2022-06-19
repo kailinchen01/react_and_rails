@@ -1,0 +1,2 @@
+module DeceasedHelper
+end

@@ -21,7 +21,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Airlines} />
           <Route exact path="/airlines/:slug" component={Airline} />
-          <UnprotectedRoute exact path="/view" component={ViewDeceased}/>
+          <Route exact path="/view" component={ViewDeceased}/>
           <UnprotectedRoute path="/login" component={Login}/>
           <UnprotectedRoute exact path="/register" component={Register} />
           <UnprotectedRoute path="/forgot-password" component={Forgot}/>

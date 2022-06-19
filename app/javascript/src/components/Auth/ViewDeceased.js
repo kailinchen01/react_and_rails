@@ -1,76 +1,62 @@
-import React, { Component, useState }  from 'react'
-import { AuthConsumer } from '../AuthContext'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styled from 'styled-components'
 
-const ViewDeceasedWrapper = styled.div``
-const FormWrapper = styled.div`
-  margin-top:50px;
-`
-const FormContainer = styled.div`
-  width: 500px;
-  margin: 0 auto;
+
+const Card = styled.div`
+  border: 1px solid #efefef;
+  background: #fff;
 `
 
-const Form = styled.form`
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  width: 100%;
   padding: 20px;
-  font-size: 14px;
-  background-color: #fff;
-  border: 1px solid #d8dee2;
-  border-radius: 0 0 3px 3px;
+
+  > div {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+  }
 `
 
-const Input = styled.input`
-  margin-top: 5px;
-  margin-bottom: 15px;
-  display: block;
-  width: 100%;
-  min-height: 34px;
-  padding: 6px 8px;
-  font-size: 16px;
-  line-height: 20px;
-  color: #24292e;
-  vertical-align: middle;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  border: 1px solid #d1d5da;
-  border-radius: 3px;
-  outline: none;
-  box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
-  width: 100%;
-  box-sizing: border-box; /* add this */
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-`
-const ViewDeceasedButton = styled.button`
-  position: relative;
-  display: inline-block;
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  vertical-align: middle;
-  background-position: -1px -1px;
-  background-size: 110% 110%;
-  border: 1px solid rgba(27,31,35,0.2);
-  border-radius: 0.25em;
-  width: 100%;
-  box-sizing: border-box; /* add this */
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-`
-const Field = styled.div`
-  width: 100%;
-`
+const ViewDeceased = () => {
+  const [deceaseds, setDeceaseds] = useState([]);
 
-const ViewDeceased = (props) => {
+  useEffect(() => {
+    /* 
+      For the v2 graphql api (experimental) you can use:
+      axios.post('/api/v2/graphql', { query: airlinesQuery })
+
+      You'll also need to uncomment this line above:
+      import airlinesQuery from '../../queries/airlinesQuery'
+    */
+    axios.get('/api/v1/deceaseds.json')
+    .then( resp => setDeceaseds(resp.data.data))
+    .catch( data => console.log('error', data))
+  }, [])
+
+
+  const grid = deceaseds.map( (d, index) => {
+    const { name, age, description } = d.attributes
+
+    
+    return (
+      <div>
+        <p>{name}, {age}</p>
+        <p>{description}</p>
+      </div>
+    )
+  })
+
   return (
-    <AuthConsumer>
-      { ({ isAuth, login }) => (
-        <div>Hello</div>
-      )}
-    </AuthConsumer>
-  )
+    <Card>
+      <Grid>{grid}</Grid>
+    </Card>
+    
+  );
 }
 
 export default ViewDeceased
