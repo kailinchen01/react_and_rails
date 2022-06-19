@@ -74,7 +74,7 @@ const Navbar = (props) => {
           <Container>
             <Nav>
               <Left>
-                <Logo><Link to="/">OpenFlights</Link></Logo>
+                <Logo><Link to="/">Help</Link></Logo>
               </Left>
               <Right>
                 <Menu>

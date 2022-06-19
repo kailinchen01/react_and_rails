@@ -17,8 +17,8 @@ const Subheader = styled.p`
 const Header = () => {
   return(
     <Wrapper>
-    <h1>OpenFlights</h1>
-    <Subheader>Honest, unbiased airline reviews. Share your experience.</Subheader>
+    <h1>Help</h1>
+    <Subheader>Communicate, connect, survive</Subheader>
     </Wrapper>
   )
 }
