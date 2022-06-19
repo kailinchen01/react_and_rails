@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0', '>= 6.0.3.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.3'
 gem 'webpacker'
+gem 'bootsnap', require: false
 
 gem 'brakeman'
 gem 'bcrypt'
@@ -27,6 +28,9 @@ gem 'graphiql-rails', group: :development
 gem 'pry'
 
 group :development, :test do
+  gem 'cucumber-rails'
+  gem 'webmock'
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
