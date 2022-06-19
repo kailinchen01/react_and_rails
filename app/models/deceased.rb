@@ -1,0 +1,2 @@
+class Deceased < ApplicationRecord
+end

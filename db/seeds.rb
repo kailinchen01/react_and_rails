@@ -34,3 +34,17 @@ Airline.create([
   }
 ])
       
+Deceased.create([
+  {
+    name: "Tom", 
+    age: 100, 
+    date_found: "2022-6-18", 
+    description: "No hair and multiple gun shots on the body"
+  },
+  {
+    name: "Jam", 
+    age: -20,
+    date_found: "2022/jan/9", 
+    description: "Multiple bruises and wounds"
+    }
+])

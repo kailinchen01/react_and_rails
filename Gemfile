@@ -28,7 +28,7 @@ gem 'graphiql-rails', group: :development
 gem 'pry'
 
 group :development, :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'webmock'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
