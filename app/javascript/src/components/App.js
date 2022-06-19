@@ -11,6 +11,7 @@ import Navbar from './Navbar'
 import { AuthProvider } from './AuthContext'
 import ProtectedRoute from './ProtectedRoute'
 import UnprotectedRoute from './UnprotectedRoute'
+import ViewDeceased from './Auth/ViewDeceased'
 
 class App extends Component {
   render(){
@@ -20,6 +21,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Airlines} />
           <Route exact path="/airlines/:slug" component={Airline} />
+          <UnprotectedRoute exact path="/view" component={ViewDeceased}/>
           <UnprotectedRoute path="/login" component={Login}/>
           <UnprotectedRoute exact path="/register" component={Register} />
           <UnprotectedRoute path="/forgot-password" component={Forgot}/>

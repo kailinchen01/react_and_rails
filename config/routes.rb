@@ -14,6 +14,7 @@ Rails.application.routes.draw do
           post 'password/forgot', to: 'auth#forgot_password'
           post 'password/reset', to: 'auth#reset_password'
           get 'me', to: 'auth#logged_in'
+          get 'view', to: 'auth#view'
           delete 'logout', to: 'auth#logout'
         end
       end

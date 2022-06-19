@@ -4,12 +4,15 @@ import Airline from './Airline'
 import Header from './Header'
 // import airlinesQuery from '../../queries/airlinesQuery'
 import styled from 'styled-components'
+import { Button } from '@material-ui/core';
+import ViewDeceased from '../Auth/ViewDeceased'
 
 const Home = styled.div`
   text-align:center;
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+  margin: 100px;
 `
 
 const Grid = styled.div`
@@ -45,21 +48,23 @@ const Airlines = () => {
   const grid = airlines.map( (airline, index) => {
     const { name, image_url, slug, average_score } = airline.attributes
 
-    return (
-      <Airline 
-        key={index}
-        name={name}
-        image_url={image_url}
-        slug={slug}
-        average_score={average_score}
-      />
-    )
+    
+    // return (
+    //   <Airline 
+    //     key={index}
+    //     name={name}
+    //     image_url={image_url}
+    //     slug={slug}
+    //     average_score={average_score}
+    //   />
+    // )
   })
 
   return (
     <Home>
       <Header/>
-      <Grid>{grid}</Grid>
+      {/* <Grid>{grid}</Grid> */}
+      <Button variant="contained" href="/view">View Deceased Info</Button>
     </Home>
   )
 }

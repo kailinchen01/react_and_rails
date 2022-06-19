@@ -28,6 +28,10 @@ module Api
           render json: { logged_in: false }, status: 200
         end
       end
+
+      def view
+      end
+
     end
   end
 end

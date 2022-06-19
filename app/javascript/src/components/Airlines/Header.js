@@ -18,7 +18,7 @@ const Header = () => {
   return(
     <Wrapper>
     <h1>Help</h1>
-    <Subheader>Communicate, connect, survive</Subheader>
+    <Subheader>Communicate, Response, Survive</Subheader>
     </Wrapper>
   )
 }
