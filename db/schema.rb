@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 2022_06_19_123103) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string "address"
+    t.string "name"
+    t.string "phone_no"
   end
 
   add_foreign_key "reviews", "airlines"
